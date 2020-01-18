@@ -1,0 +1,58 @@
+form {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+}
+
+.button-curved {
+    color: rgb(50, 50, 50);
+    background-image: linear-gradient(0deg, rgb(194, 194, 194), rgb(241, 239, 239));
+    border: 0.5px solid rgb(212, 212, 212);
+    text-shadow: rgb(255, 255, 255) 1px 1px 1px;
+    font-size: 15px;
+}
+
+input[type="text"] {
+    width: 100%;
+}
+
+input[type="submit"], button {
+    font-weight: 400;
+    background-image: linear-gradient(0deg, rgb(46, 141, 65), rgb(32, 185, 63));
+    border: 0.3px solid rgb(175, 175, 175);
+    text-shadow: rgb(175, 175, 175) 1px 1px 1px;
+}
+
+button div {
+    color: white;
+}
+
+#container-form {
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 5px;
+    padding: 40px;
+    width: 440px;
+}
+
+#head-text {
+    font-size: 19px;
+    width: 200px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.align-icon {
+    text-align: center;
+    padding: 20px;
+}
+
+footer div {
+    text-align: center;
+    padding-top: 80px;
+}
+
+footer div small {
+    margin: 20px;
+}
