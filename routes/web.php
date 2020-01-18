@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/register', 'ViewsController@register')->name('register');
 Route::get('/login', 'ViewsController@login')->name('login');

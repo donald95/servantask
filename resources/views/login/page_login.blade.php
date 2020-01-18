@@ -12,7 +12,7 @@
 
 <body>
     <div class="align-icon">
-        <a href="http://">
+        <a href="{{ route('welcome') }}">
             <img src="" alt="servant" style="width: 70px;">
         </a>
     </div>
@@ -64,7 +64,7 @@
         </form>
         <br>
         <div class="border rounded p-2" style="margin: auto; width: 40%; height: auto;">
-            <p class="m-2 text-center">Don't you have an account? <a href="">Create an account.</a></p>
+            <p class="m-2 text-center">Don't you have an account? <a href="{{ route('register') }}">Create an account.</a></p>
         </div>
     </div>
 

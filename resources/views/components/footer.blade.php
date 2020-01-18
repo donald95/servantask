@@ -7,13 +7,13 @@
                     <li class="list-group-item bg-dark">
                         <a class="footer-links font-weight-light" href="">Docs</a>&nbsp;
                         <span title="Documentation" class="">
-                            <i class="icon-two">&#xe800;</i>
+                            <i class="icon" style="font-size: 130%;">&#xf15c;</i>
                         </span>
                     </li>
                     <li class="list-group-item bg-dark">
                         <a class="footer-links font-weight-light" href="">Tutorials</a>&nbsp;
                         <span title="Documentation" class="">
-                            <i class="icon-two">&#xf19c;</i>
+                            <i class="icon" style="font-size: 130%;">&#xe805;</i>
                         </span>
                     </li>
                 </ul>
@@ -24,13 +24,13 @@
                     <li class="list-group-item bg-dark">
                         <a class="footer-links font-weight-light" href="">Whatsapp</a>&nbsp;
                         <span title="Documentation" class="">
-                            <i class="icon-two">&#xe801;</i>
+                            <i class="icon" style="font-size: 130%;">&#xe806;</i>
                         </span>
                     </li>
                     <li class="list-group-item bg-dark">
                         <a class="footer-links font-weight-light" href="">Telegram</a>&nbsp;
                         <span title="Documentation" class="">
-                            <i class="icon-two">&#xf2c6;</i>
+                            <i class="icon" style="font-size: 130%;">&#xf2c6;</i>
                         </span>
                     </li>
                 </ul>
@@ -41,19 +41,19 @@
                     <li class="list-group-item bg-dark">
                         <a class="footer-links font-weight-light" href="">Facebook</a>&nbsp;
                         <span title="Documentation" class="">
-                            <i class="icon-two">&#xf308;</i>
+                            <i class="icon" style="font-size: 130%;">&#xf30d;</i>
                         </span>
                     </li>
                     <li class="list-group-item bg-dark">
                         <a class="footer-links font-weight-light" href="">Twitter</a>&nbsp;
                         <span title="Documentation" class="">
-                            <i class="icon-two">&#xf304;</i>
+                            <i class="icon" style="font-size: 130%;">&#xf30a;</i>
                         </span>
                     </li>
                     <li class="list-group-item bg-dark">
                         <a class="footer-links font-weight-light" href="">Instagram</a>&nbsp;
                         <span title="Documentation" class="">
-                            <i class="icon-two">&#xf32d;</i>
+                            <i class="icon" style="font-size: 130%;">&#xf05e;</i>
                         </span>
                     </li>
                 </ul>

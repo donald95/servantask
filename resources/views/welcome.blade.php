@@ -13,13 +13,13 @@
     @section('head')
     <div class="text-center">
         <h1 class="display-4">
-            ServanTask.net
+            ServanTask.com
         </h1>
         <h3 class="font-weight-light">Your dreams, our work.</h3>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light sticky-top color-nav"
         style="box-shadow: 0px 3px 3px 0px rgba(185, 184, 184, 0.726);">
-        <a class="navbar-brand" href="index.html">ServanTask.net</a>
+        <a class="navbar-brand" href="{{ route('welcome') }}">ServanTask.com</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSopportedContent"
             aria-controls="navbarSopportedContent" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
@@ -30,7 +30,7 @@
                 <li class="nav-item"><a class="nav-link" href="">Forum</a></li>
                 <li class="nav-item"><a class="nav-link" href="">About us</a></li>
             </ul>
-            <a href="{{ route('register') }}" class="btn btn-outline-dark btn-md mr-2" role="button" aria-pressed="true">Sign up</a>
+            <a href="{{ route('register') }}" class="btn btn-default btn-light mr-2" role="button" aria-pressed="true">Sign up</a>
             <a href="{{ route('login') }}" class="btn btn-outline-dark btn-md" role="button" aria-pressed="true">Sign in</a>
         </div>
     </nav>

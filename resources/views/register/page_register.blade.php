@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Servant Register</title>
+    <link rel="stylesheet" href="{{ asset('css/section-register.css') }}">
     <style media="screen">
         @media (max-width: 575.98px) {}
 
@@ -48,7 +49,7 @@
     @section('head')
     <nav class="navbar navbar-expand-lg navbar-light sticky-top color-nav"
         style="box-shadow: 0px 0px 5px 0px rgba(185, 184, 184, 0.726);">
-        <a class="navbar-brand" href="">ServanTask.net</a>
+        <a class="navbar-brand" href="{{ route('welcome') }}">ServanTask.com</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSopportedContent"
             aria-controls="navbarSopportedContent" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
@@ -59,22 +60,19 @@
                 <li class="nav-item"><a class="nav-link" href="">Forum</a></li>
                 <li class="nav-item"><a class="nav-link" href="">About us</a></li>
             </ul>
-            <a href="form-register.html" class="btn btn-outline-dark btn-md mr-2" role="button" aria-pressed="true">Sign
-                up</a>
-            <a href="login.html" class="btn btn-outline-dark btn-md" role="button" aria-pressed="true">Sign in</a>
+            <a href="{{ route('login') }}" class="btn btn-outline-dark btn-md" role="button" aria-pressed="true">Sign in</a>
         </div>
     </nav>
     @endsection
 
     @section('body')
-    <ol class="container breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="index.html">Home</a>
-        </li>
-        <li class="breadcrumb-item">
-            Register
-        </li>
-    </ol>
+    <nav class="container pt-2" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ route('welcome') }}">Home</a>
+            <li class="breadcrumb-item active" aria-current="page">Register</li>
+        </ol>
+    </nav>
+
     <div class="container w-75 pl-5 pr-5 pb-5 pt-2 order-box">
         <div class="card mr-3 width-card">
             <section class="border-rounded">
@@ -93,7 +91,7 @@
             <div class="input-group mb-3 w-100">
                 <div class="input-group-prepend" style="width: 45px;">
                     <span class="input-group-text w-100 button-curved" id="basic-addon1">
-                        <i class="icon">&#xe803;</i>
+                        <i class="icon" style="font-size: 100%;">&#xe802;</i>
                     </span>
                 </div>
                 <input class="form-control" type="text" placeholder="Username" aria-label="Recipient's username"
@@ -102,7 +100,7 @@
             <div class="input-group mb-3 w-100">
                 <div class="input-group-prepend" style="width: 45px;">
                     <span class="input-group-text w-100 button-curved" id="basic-addon2">
-                        <i class="icon">&#xe800;</i>
+                        <i class="icon" style="font-size: 100%;">&#xe800;</i>
                     </span>
                 </div>
                 <input class="form-control" type="text" placeholder="Name" aria-label="Recipient's username"
@@ -111,7 +109,7 @@
             <div class="input-group mb-3 w-100">
                 <div class="input-group-prepend" style="width: 45px;">
                     <span class="input-group-text w-100 button-curved" id="basic-addon3">
-                        <i class="icon">&#xe800;</i>
+                        <i class="icon" style="font-size: 100%;">&#xe800;</i>
                     </span>
                 </div>
                 <input class="form-control" type="text" placeholder="Last name" aria-label="Recipient's username"
@@ -120,7 +118,7 @@
             <div class="input-group mb-3 w-100">
                 <div class="input-group-prepend" style="width: 45px;">
                     <span class="input-group-text w-100 button-curved" id="basic-addon4">
-                        <i class="icon">&#xf0e0;</i>
+                        <i class="icon" style="font-size: 100%;">&#xf0e0;</i>
                     </span>
                 </div>
                 <input class="form-control" type="email" placeholder="E-mail" aria-label="Recipient's username"
@@ -129,7 +127,7 @@
             <div class="input-group mb-3 w-100">
                 <div class="input-group-prepend" style="width: 45px;">
                     <span class="input-group-text w-100 button-curved" id="basic-addon5">
-                        <i class="icon">&#xe801;</i>
+                        <i class="icon" style="font-size: 100%;">&#xe801;</i>
                     </span>
                 </div>
                 <input class="form-control" type="password" placeholder="Password" aria-label="Recipient's username"
@@ -145,7 +143,7 @@
                     aria-label="Recipient's username" aria-describedby="basic-addon6">
             </div>
             <button class="btn btn-success btn-block button-curved-two">
-                <i class="icon">&#xe802;</i>&nbsp;Register
+                <i class="icon">&#xe804;</i>&nbsp;Register
             </button>
         </form>
     </div>
