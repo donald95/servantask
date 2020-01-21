@@ -51,7 +51,7 @@
                         <td>
                             <button class="btn btn-block form-control-md" type="submit">
                                 <div title="User's password">
-                                    <i class="icon">&#xe802;</i>&nbsp;Sign in
+                                    <i class="icon">&#xe804;</i>&nbsp;Sign in
                                 </div>
                             </button>
                         </td>
