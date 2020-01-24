@@ -13,15 +13,15 @@
     @section('head')
     <div class="text-center">
         <h1 class="display-4">
-            ServanTask.com
+        <img src="{{ asset('img/angry-dog.svg') }}" alt="servant" style="width: 70px;">&nbsp;ServanTask.com
         </h1>
         <h3 class="font-weight-light">Your dreams, our work.</h3>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top color-nav"
-        style="box-shadow: 0px 3px 3px 0px rgba(185, 184, 184, 0.726);">
-        <a class="navbar-brand" href="{{ route('welcome') }}">ServanTask.com</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSopportedContent"
-            aria-controls="navbarSopportedContent" aria-expanded="false">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top color-nav" style="box-shadow: 0px 3px 3px 0px rgba(185, 184, 184, 0.726);">
+        <a class="navbar-brand" href="{{ route('welcome') }}">
+            <img src="{{ asset('img/angry-dog.svg') }}" alt="servant" style="width: 25px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSopportedContent" aria-controls="navbarSopportedContent" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSopportedContent">

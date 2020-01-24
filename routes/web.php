@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('/register', 'ViewsController@register')->name('register');
-Route::get('/login', 'ViewsController@login')->name('login');
+// Route::get('/register', 'ViewsController@register')->name('register');
+// Route::get('/login', 'ViewsController@login')->name('login');
 
 Route::group(['prefix' => 'projects'], function () {
     Route::get('/', [
@@ -49,3 +49,7 @@ Route::group(['prefix' => 'projects'], function () {
         'as'   => 'project.destroy'
     ]);
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

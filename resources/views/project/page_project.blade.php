@@ -11,11 +11,9 @@
 
 <body>
     @section('head')
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top color-nav"
-        style="box-shadow: 0px 0px 5px 0px rgba(185, 184, 184, 0.726);">
-        <a class="navbar-brand" href="">ServanTask.com</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSopportedContent"
-            aria-controls="navbarSopportedContent" aria-expanded="false">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top color-nav" style="box-shadow: 0px 0px 5px 0px rgba(185, 184, 184, 0.726);">
+        <a class="navbar-brand" href=""><img src="{{ asset('img/angry-dog.svg') }}" alt="servant" style="width: 25px;">&nbsp;ServanTask.com</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSopportedContent" aria-controls="navbarSopportedContent" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSopportedContent">
@@ -60,14 +58,12 @@
         </div>
         <div class="container w-75">
             <div class="p-2 w-100 text-center">
-                <span class="badge bg-secondary badge-pill text-white"
-                    style="font-size: 13px; font-weight: 400; padding: 6px;">
+                <span class="badge bg-secondary badge-pill text-white" style="font-size: 13px; font-weight: 400; padding: 6px;">
                     14th, November 2019
                 </span>
             </div>
             <ul class="list-group mb-4">
-                <a href="tasks-page.html"
-                    class="list-group-item list-group-item-light list-group-item-action pad-item-project">
+                <a href="tasks-page.html" class="list-group-item list-group-item-light list-group-item-action pad-item-project">
                     <div class="d-flex justify-content-between align-items-center">
                         <h5>Project #01</h5>
                         <span class="badge bg-primary badge-pill text-white"><span>3</span> tasks</span>
@@ -86,8 +82,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="tasks-page.html"
-                    class="list-group-item list-group-item-light list-group-item-action pad-item-project">
+                <a href="tasks-page.html" class="list-group-item list-group-item-light list-group-item-action pad-item-project">
                     <div class="d-flex justify-content-between align-items-center">
                         <h5>Project #01</h5>
                         <span class="badge bg-primary badge-pill text-white"><span>3</span> tasks</span>
