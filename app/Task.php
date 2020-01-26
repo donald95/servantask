@@ -31,4 +31,9 @@ class Task extends Model
     {
         return $this->hasMany('App\Task', 'parent_id');
     }
+
+    public function project()
+    {
+        return $this->belongsTo('App\Project');
+    }
 }

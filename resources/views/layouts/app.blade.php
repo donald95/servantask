@@ -95,46 +95,29 @@
                     </span>
                 </div>
                 <ul class="list-group mb-4">
-                    <a href="tasks-page.html"
+                    @foreach ($projects as $item)
+                    <a href="{{ route('project.show', ['id'=>$item->id]) }}"
                         class="list-group-item list-group-item-light list-group-item-action pad-item-project">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h5>Project #01</h5>
-                            <span class="badge bg-primary badge-pill text-white"><span>3</span> tasks</span>
+                            <h5>{{ $item->title }}</h5>
+                            <span class="badge bg-primary badge-pill text-white"><span>{{ $item->tasks()->count() }}</span>&nbsp;tasks</span>
                         </div>
                         <hr>
                         <div>
                             <p class="paragraph-weight" style="font-size: 17px;">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                {{ $item->description }}
                             </p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <small style="color: rgb(164, 164, 164);">3 minutes ago</small>
-                                <small class="text-right" style="width: 60%; color: rgb(164, 164, 164);">State:</small>
+                                <small
+                                    style="color: rgb(164, 164, 164);">{{ $item->created_at->format('F j, Y, g:i a') }}</small>
+                                <small class="text-right" style="width: 50%; color: rgb(164, 164, 164);">State:</small>
                                 <div class="progress w-25">
                                     <div class="progress-bar" style="width: 25%;"></div>
                                 </div>
                             </div>
                         </div>
                     </a>
-                    <a href="tasks-page.html"
-                        class="list-group-item list-group-item-light list-group-item-action pad-item-project">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <h5>Project #01</h5>
-                            <span class="badge bg-primary badge-pill text-white"><span>3</span> tasks</span>
-                        </div>
-                        <hr>
-                        <div>
-                            <p class="paragraph-weight" style="font-size: 17px;">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small style="color: rgb(164, 164, 164);">3 minutes ago</small>
-                                <small class="text-right" style="width: 60%; color: rgb(164, 164, 164);">State:</small>
-                                <div class="progress w-25">
-                                    <div class="progress-bar" style="width: 25%;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                    @endforeach
                 </ul>
             </div>
         </div>

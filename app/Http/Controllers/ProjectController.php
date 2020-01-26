@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use  App\User;
+use App\Project;
+use App\Task;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -45,7 +48,21 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        //
+        // $project = Project::find($id);
+        // $tasks   = Project::find($id)->tasks;
+
+        $project = Project::join('tasks', 'tasks.project_id', '=', 'projects.id')
+            ->select('projects.title', 'tasks.*')
+            ->where('projects.id', '=', $id)
+            ->get();
+
+        // $data = array(
+        //     'project' => $project,
+        //     'tasks'   => $tasks,
+        // );
+
+        // return $data;
+        return $project;
     }
 
     /**
@@ -80,5 +97,18 @@ class ProjectController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * getUserProjects
+     *
+     * @param  mixed $user_id
+     *
+     * @return void
+     */
+    public function getUserProjects($user_id)
+    {
+        $projects = User::find($user_id)->projects;
+        return $projects;
     }
 }

@@ -48,6 +48,8 @@ Route::group(['prefix' => 'projects'], function () {
         'uses' => 'ProjectController@destroy',
         'as'   => 'project.destroy'
     ]);
+
+    Route::get('test/{id}', 'ProjectController@getUserProjects');
 });
 
 Auth::routes();

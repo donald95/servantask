@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use Illuminate\Support\Facades\DB;
+use App\User;
+
 
 class HomeController extends Controller
 {
@@ -23,6 +27,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        // $projects =  DB::table("projects")->where("user_id", Auth::user()->id)->get();
+        $projects = User::find(Auth::id())->projects;
+        return view('home', compact('projects'));
     }
 }

@@ -23,10 +23,18 @@ class Project extends Model
     ];
 
     /**
-     * Get the tasks for the project.
+     * Get the tasks from project.
      */
     public function tasks()
     {
         return $this->hasMany('App\Task');
+    }
+
+    /**
+     * Get the user that owns the project.
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 }
