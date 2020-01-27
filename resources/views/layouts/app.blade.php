@@ -13,7 +13,6 @@
 
 <body>
 
-
     @section('head')
     <nav class="navbar navbar-expand-lg navbar-light sticky-top color-nav"
         style="box-shadow: 0px 0px 5px 0px rgba(185, 184, 184, 0.726);">
@@ -64,7 +63,6 @@
     <main class="py-4">
         <nav class="container pt-2" aria-label="breadcrumb">
             <ol class="breadcrumb">
-                {{-- <li class="breadcrumb-item"><a href="{{ route('welcome') }}">Home</a></li> --}}
                 <li class="breadcrumb-item active" aria-current="page">Projects</li>
             </ol>
         </nav>
@@ -95,12 +93,14 @@
                     </span>
                 </div>
                 <ul class="list-group mb-4">
+                    @if (!$projects->isEmpty())
                     @foreach ($projects as $item)
                     <a href="{{ route('project.show', ['id'=>$item->id]) }}"
                         class="list-group-item list-group-item-light list-group-item-action pad-item-project">
                         <div class="d-flex justify-content-between align-items-center">
                             <h5>{{ $item->title }}</h5>
-                            <span class="badge bg-primary badge-pill text-white"><span>{{ $item->tasks()->count() }}</span>&nbsp;tasks</span>
+                            <span
+                                class="badge bg-primary badge-pill text-white"><span>{{ $item->tasks()->count() }}</span>&nbsp;tasks</span>
                         </div>
                         <hr>
                         <div>
@@ -118,6 +118,13 @@
                         </div>
                     </a>
                     @endforeach
+                    @else
+                    <a class="list-group-item list-group-item-light list-group-item-action">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <h5 class="p-4">No projects have been added.</h5>
+                        </div>
+                    </a>
+                    @endif
                 </ul>
             </div>
         </div>

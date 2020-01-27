@@ -29,6 +29,7 @@ class HomeController extends Controller
     {
         // $projects =  DB::table("projects")->where("user_id", Auth::user()->id)->get();
         $projects = User::find(Auth::id())->projects;
+
         return view('home', compact('projects'));
     }
 }

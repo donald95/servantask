@@ -48,7 +48,6 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        // $project = Project::find($id);
         // $tasks   = Project::find($id)->tasks;
 
         $project = Project::join('tasks', 'tasks.project_id', '=', 'projects.id')
@@ -62,7 +61,11 @@ class ProjectController extends Controller
         // );
 
         // return $data;
-        return $project;
+
+        $pro = Project::find($id);
+        $title =  $pro->title;
+
+        return view('task.tasks', compact('project', 'title'));
     }
 
     /**
