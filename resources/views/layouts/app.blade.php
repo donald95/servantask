@@ -96,7 +96,7 @@
                     @if (!$projects->isEmpty())
                     @foreach ($projects as $item)
                     <a href="{{ route('project.show', ['id'=>$item->id]) }}"
-                        class="list-group-item list-group-item-light list-group-item-action pad-item-project">
+                        class="list-group-item list-group-item-light list-group-item-action rounded-sm mb-1 pad-item-project">
                         <div class="d-flex justify-content-between align-items-center">
                             <h5>{{ $item->title }}</h5>
                             <span

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Servant Tasks</title>
+    <title>ServanTask.com</title>
     <link rel="stylesheet" href="{{ asset('css/section-task.css') }}">
 </head>
 
@@ -100,7 +100,9 @@
                 <ul class="list-group">
                     @if (!$project->isEmpty())
                     @foreach ($project as $item)
-                    <a href="" class="list-group-item list-group-item-light list-group-item-action" type="button"
+
+
+                    <a href="" class="list-group-item list-group-item-light list-group-item-action rounded-sm mb-1" type="button"
                         data-toggle="collapse" data-target="{{ '#collapse' . $item->id }}" aria-expanded="true"
                         aria-controls="collapseOne">
                         <div class="d-flex align-items-center p-2">
@@ -118,7 +120,8 @@
                             </div>
                         </div>
                     </a>
-                    <div id="{{ 'collapse' . $item->id }}" class="collapse border" aria-labelledby="headingOne"
+
+                    <div id="{{ 'collapse' . $item->id }}" class="collapse mb-1 border rounded-sm" aria-labelledby="headingOne"
                         data-parent="#accordionExample">
                         <div class="container card-body">
                             <p class="w-75 p-4">
@@ -129,6 +132,9 @@
                             </p>
                         </div>
                     </div>
+
+
+
                     @endforeach
                     @else
                     <a class="list-group-item list-group-item-light list-group-item-action">
