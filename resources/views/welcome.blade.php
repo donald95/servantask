@@ -7,21 +7,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Let's go, you get started now</title>
     <link rel="stylesheet" href="{{ asset('css/section-main.css') }}">
+    <style media="screen">
+        @media (max-width: 575.98px) {}
+
+        @media (max-width: 767.98px) {
+            .order-box {
+                display: flex;
+            }
+
+            .width-card {
+                width: 35%;
+            }
+
+            .form-register {
+                width: 65%;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .order-box {
+                display: block;
+            }
+
+            .width-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .form-register {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 1199.98px) {}
+    </style>
 </head>
 
 <body>
     @section('head')
     <div class="text-center">
         <h1 class="display-4">
-        <img src="{{ asset('img/angry-dog.svg') }}" alt="servant" style="width: 70px;">&nbsp;ServanTask.com
+            <img src="{{ asset('img/angry-dog.svg') }}" alt="servant" style="width: 70px;">&nbsp;ServanTask.com
         </h1>
         <h3 class="font-weight-light">Your dreams, our work.</h3>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top color-nav" style="box-shadow: 0px 3px 3px 0px rgba(185, 184, 184, 0.726);">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top color-nav"
+        style="box-shadow: 0px 3px 3px 0px rgba(185, 184, 184, 0.726);">
         <a class="navbar-brand" href="{{ route('welcome') }}">
             <img src="{{ asset('img/angry-dog.svg') }}" alt="servant" style="width: 25px;">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSopportedContent" aria-controls="navbarSopportedContent" aria-expanded="false">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSopportedContent"
+            aria-controls="navbarSopportedContent" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSopportedContent">
@@ -30,8 +66,10 @@
                 <li class="nav-item"><a class="nav-link" href="">Forum</a></li>
                 <li class="nav-item"><a class="nav-link" href="">About us</a></li>
             </ul>
-            <a href="{{ route('register') }}" class="btn btn-default btn-light mr-2" role="button" aria-pressed="true">Sign up</a>
-            <a href="{{ route('login') }}" class="btn btn-outline-dark btn-md" role="button" aria-pressed="true">Sign in</a>
+            <a href="{{ route('register') }}" class="btn btn-default btn-light mr-2" role="button"
+                aria-pressed="true">Sign up</a>
+            <a href="{{ route('login') }}" class="btn btn-outline-dark btn-md" role="button" aria-pressed="true">Sign
+                in</a>
         </div>
     </nav>
     @endsection
@@ -39,14 +77,109 @@
     <img id="main-image" src="{{ asset('img/meeting.jpg') }}" alt="aplication-management-project">
     <section class="section-wrap-shadow">
         <section id="section-main" style="width: 100%; height: 100%;">
+
+            <div class="row" style="width: 100%; padding: 6.5%">
+                <div class="col-sm">
+                    <div class="container rounded p-4" style="background-color: rgba(55, 55, 55, 0.3);">
+                        <div class="w-75" style="margin: auto;">
+                            <h1 class="text-center text-light">Welcome to ServanTask</h1>
+                            <p class="paragraph text-light" style="font-size: 16px;">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Ea facere excepturi doloribus error omnis ut ab vel incidunt nemo
+                                laboriosam? Veritatis perspiciatis sint distinctio nam? Illo dolor
+                                dolore porro laborum. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            </p>
+                            <a class="btn btn-info btn-sm" href="">Let's get started</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-light col-sm rounded p-4">
+                    <div class="card mb-3 width-card rounded">
+                        <section class="">
+                            <h1 class="w-100 p-3 text-white rounded-top text-center" style="background-color: rgb(1, 45, 83);">
+                                Sing up and enjoy
+                            </h1>
+                            <p class="p-3 paragraph">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quam praesentium repellendus doloremque molestias maiores.
+                            </p>
+                        </section>
+                    </div>
+                    <form class="form-register" method="POST" action="{{ route('register') }}">
+                        @csrf
+                        <div class="input-group mb-3 w-100">
+                            <div class="input-group-prepend" style="width: 45px;">
+                                <span class="input-group-text w-100 button-curved" id="basic-addon1">
+                                    <i class="icon" style="font-size: 100%;">&#xe800;</i>
+                                </span>
+                            </div>
+                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
+                                name="name" value="{{ old('name') }}" required autocomplete="name" autofocus
+                                placeholder="Name" aria-label="Recipient's name">
+
+                            @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                        <div class="input-group mb-3 w-100">
+                            <div class="input-group-prepend" style="width: 45px;">
+                                <span class="input-group-text w-100 button-curved" id="basic-addon4">
+                                    <i class="icon" style="font-size: 100%;">&#xe802;</i>
+                                </span>
+                            </div>
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                                name="email" value="{{ old('email') }}" required autocomplete="email"
+                                placeholder="E-mail" aria-label="Recipient's email">
+
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                        <div class="input-group mb-3 w-100">
+                            <div class="input-group-prepend" style="width: 45px;">
+                                <span class="input-group-text w-100 button-curved" id="basic-addon5">
+                                    <i class="icon" style="font-size: 100%;">&#xe801;</i>
+                                </span>
+                            </div>
+                            <input id="password" type="password"
+                                class="form-control @error('password') is-invalid @enderror" name="password" required
+                                autocomplete="new-password" placeholder="Password" aria-label="Recipient's password">
+
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                        <div class="input-group mb-3 w-100">
+                            <div class="input-group-prepend" style="width: 45px;">
+                                <span class="input-group-text w-100 button-curved" id="basic-addon6">
+                                    <i class="icon">&#xe801;</i>
+                                </span>
+                            </div>
+                            <input id="password-confirm" type="password" class="form-control"
+                                name="password_confirmation" required autocomplete="new-password"
+                                placeholder="Again Password" aria-label="Recipient's password">
+                        </div>
+                        <button class="btn btn-success btn-block button-curved-two" type="submit">
+                            <i class="icon">&#xe804;</i>&nbsp;Register
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+
             <div class="row p-1" style="justify-content: center; align-items: center;">
-                <div class="col-sm-4 p-0 m-2 font-weight-light bg-light" style="font-size: 15px;">
+
+                <div class="bg-light m-4" style="font-size: 15px; width: 250px;">
                     <h5 class="pl-4 pr-4 pt-4">Get Started With Us</h5>
                     <hr>
-                    <p class="pl-4 pr-4">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Laboriosam ut omnis sapiente vitae voluptates cum doloribus? Id dolorem impedit,
-                        ipsam eveniet reiciendis incidunt quidem facilis sit corrupti perferendis! Illum, sequi?
+                    <p class="pl-4 pr-4 paragraph">
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                         Laboriosam ut omnis sapiente vitae voluptates cum doloribus? Id dolorem impedit,
                         ipsam eveniet reiciendis incidunt quidem facilis sit corrupti perferendis! Illum, sequi?
@@ -55,13 +188,11 @@
                         <a class="text-primary dash-text-intolink" href="">How can help you?</a>
                     </small>
                 </div>
-                <div class="col-sm-4 p-0 m-2 font-weight-light bg-light" style="font-size: 15px;">
+
+                <div class="bg-light m-4" style="font-size: 15px; width: 250px;">
                     <h5 class="pl-4 pr-4 pt-4">Create A Project</h5>
                     <hr>
-                    <p class="pl-4 pr-4">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Laboriosam ut omnis sapiente vitae voluptates cum doloribus? Id dolorem impedit,
-                        ipsam eveniet reiciendis incidunt quidem facilis sit corrupti perferendis! Illum, sequi?
+                    <p class="pl-4 pr-4 paragraph">
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                         Laboriosam ut omnis sapiente vitae voluptates cum doloribus? Id dolorem impedit,
                         ipsam eveniet reiciendis incidunt quidem facilis sit corrupti perferendis! Illum, sequi?
@@ -70,13 +201,11 @@
                         <a class="text-primary dash-text-intolink" href="">Creat a project</a>
                     </small>
                 </div>
-                <div class="col-sm-4 p-0 m-2 font-weight-light bg-light" style="font-size: 15px;">
+
+                <div class="bg-light m-4" style="font-size: 15px; width: 250px;">
                     <h5 class="pl-4 pr-4 pt-4">Manage Your Projects</h5>
                     <hr>
-                    <p class="pl-4 pr-4">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Laboriosam ut omnis sapiente vitae voluptates cum doloribus? Id dolorem impedit,
-                        ipsam eveniet reiciendis incidunt quidem facilis sit corrupti perferendis! Illum, sequi?
+                    <p class="pl-4 pr-4 paragraph">
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                         Laboriosam ut omnis sapiente vitae voluptates cum doloribus? Id dolorem impedit,
                         ipsam eveniet reiciendis incidunt quidem facilis sit corrupti perferendis! Illum, sequi?
@@ -85,13 +214,10 @@
                         <a class="text-primary dash-text-intolink" href="">Begin to manage your tasks </a>
                     </small>
                 </div>
-                <div class="col-sm-4 p-0 m-2 font-weight-light bg-light" style="font-size: 15px;">
+                <div class="bg-light m-4" style="font-size: 15px; width: 250px;">
                     <h5 class="pl-4 pr-4 pt-4">Get Reminder</h5>
                     <hr>
-                    <p class="pl-4 pr-4">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Laboriosam ut omnis sapiente vitae voluptates cum doloribus? Id dolorem impedit,
-                        ipsam eveniet reiciendis incidunt quidem facilis sit corrupti perferendis! Illum, sequi?
+                    <p class="pl-4 pr-4 paragraph">
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                         Laboriosam ut omnis sapiente vitae voluptates cum doloribus? Id dolorem impedit,
                         ipsam eveniet reiciendis incidunt quidem facilis sit corrupti perferendis! Illum, sequi?
@@ -103,7 +229,7 @@
             </div>
         </section>
     </section>
-    <br><br>
+    <br><br><br>
     <div class="container p-2" style="height: auto;">
         <div class="row">
             <div class="container col-sm p-4 center-bubbles rounded pattern-color" style="height: 700px; width: 50%;">
@@ -177,7 +303,7 @@
                 <div class="container">
                     <div class="w-75" style="margin: auto;">
                         <h1 class="text-center">Exchange messages related to your projects</h1>
-                        <p>
+                        <p class="paragraph">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             Ea facere excepturi doloribus error omnis ut ab vel incidunt nemo
                             laboriosam? Veritatis perspiciatis sint distinctio nam? Illo dolor
@@ -187,6 +313,16 @@
                             delectus soluta eius maiores hic ut officia.
                         </p>
                         <a class="btn btn-info btn-sm" href="">Let's get started</a>
+                    </div>
+                    <div class="w-75 pt-5" style="margin: auto;">
+                        <h1 class="text-center">Share files</h1>
+                        <p class="paragraph">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Ea facere excepturi doloribus error omnis ut ab vel incidunt nemo
+                            laboriosam? Veritatis perspiciatis sint distinctio nam? Illo dolor
+                            dolore porro laborum. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        <a class="btn btn-info btn-sm" href="">Let's share</a>
                     </div>
                 </div>
             </div>

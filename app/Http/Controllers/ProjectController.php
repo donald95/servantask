@@ -6,6 +6,7 @@ use  App\User;
 use App\Project;
 use App\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ProjectController extends Controller
 {
@@ -16,7 +17,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return view('project.page_project');
+        echo "No hay nada aquí";
     }
 
     /**
@@ -37,7 +38,31 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $validator = Validator::make(
+        //     $request->input(),
+        //     array(
+        //         'title'       => 'required',
+        //         'description' => 'required',
+        //     )
+        // );
+
+        // if ($validator->fails()) {
+        //     return response()->json([
+        //         'error'   => true,
+        //         'message' => $validator->errors()
+        //     ], 422);
+        // }
+
+        // $project = Project::create($request->all());
+
+        // return response()->json([
+        //     'error'   => false,
+        //     'message' => $project
+        // ], 200);
+
+        return response()->json([
+            'message'   => 'Excelente',
+        ], 200);
     }
 
     /**
@@ -76,7 +101,9 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        //
+        return response()->json([
+            'message'   => 'Excelente',
+        ], 200);
     }
 
     /**
@@ -88,7 +115,9 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return response()->json([
+            'message'   => 'Excelente',
+        ], 200);
     }
 
     /**
@@ -99,7 +128,9 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return response()->json([
+            'message'   => 'Excelente',
+        ], 200);
     }
 
     /**

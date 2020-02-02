@@ -3,7 +3,7 @@
 }
 
 .paragraph-weight {
-    font-weight: 300;
+    font-weight: 400;
 }
 
 #button-setting {
@@ -13,6 +13,7 @@
     text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px;
     font-weight: 400;
     font-size: 14px;
+    /* background-color: rgb(92, 92, 92); */
 }
 
 #button-create {

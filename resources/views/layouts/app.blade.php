@@ -9,6 +9,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>ServanTask.com</title>
     <link rel="stylesheet" href="{{ asset('css/section-project.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/ripple-effect.css') }}">
+    <script type="text/javascript" src="{{asset('js/jquery/jquery-3.4.1.js')}}"></script>
 </head>
 
 <body>
@@ -70,9 +72,10 @@
             <div class="row">
                 <div class="col-md-12 text-center ">
                     <div class="btn-group m-2">
-                        <button type="button" class="btn btn-sm" id="button-create" data-toggle="modal" data-target="#"">
+                        <button type="button" class="btn btn-sm" id="button-create" data-toggle="modal" data-target="#"
+                            onclick="createProjectForm();">
                             <span title=" Documentation" class="">
-                            <i class="icon" style="opacity: 1;">&#xe807;</i>
+                                <i class="icon" style="opacity: 1;">&#xe807;</i>
                             </span>
                             &nbsp;Create new project
                         </button>
@@ -95,103 +98,78 @@
                 <ul class="list-group mb-4">
                     @if (!$projects->isEmpty())
                     @foreach ($projects as $item)
-                    <a href="{{ route('project.show', ['id'=>$item->id]) }}"
-                        class="list-group-item list-group-item-light list-group-item-action rounded-sm mb-1 pad-item-project">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <h5>{{ $item->title }}</h5>
-                            <span
-                                class="badge bg-primary badge-pill text-white"><span>{{ $item->tasks()->count() }}</span>&nbsp;tasks</span>
+                    {{-- <div class="container">
+                        <button class="btn btn-light rounded-circle btn-ripple" type="button">
+                            <img src="{{ asset('img/edit.svg') }}" alt="" width="29px">
+                    </button>
+                    <button class="btn btn-light rounded-circle btn-ripple" type="button">
+                        <img src="{{ asset('img/trash.svg') }}" alt="" width="29px">
+                    </button>
+                    <button class="btn btn-light rounded-circle btn-ripple" type="button">
+                        <img src="{{ asset('img/info.svg') }}" alt="" width="29px">
+                    </button>
+            </div> --}}
+            <div
+                class="list-group-item list-group-item-light list-group-item-action rounded-sm mb-1 pad-item-project p-4">
+                <a href="{{ route('project.show', ['id'=>$item->id]) }}"
+                    class="d-flex justify-content-between align-items-center">
+                    <h5>{{ $item->title }}</h5>
+                    <span
+                        class="badge bg-primary badge-pill text-white"><span>{{ $item->tasks()->count() }}</span>&nbsp;tasks</span>
+                </a>
+                <hr>
+                <div>
+                    <p class="paragraph-weight d-inline" style="font-size: 17px;">
+                        {{ $item->description }}
+                    </p>
+                    <div class="d-flex m-2">
+                        <button class="btn btn-light rounded-circle btn-ripple m-1" type="button"
+                            onclick="editProjectForm({{ $item->id }});">
+                            <img src="{{ asset('img/edit.svg') }}" alt="" width="25px">
+                        </button>
+                        <button class="btn btn-light rounded-circle btn-ripple m-1" type="button"
+                            onclick="deleteProjectForm({{ $item->id }});">
+                            <img src="{{ asset('img/trash.svg') }}" alt="" width="25px">
+                        </button>
+                        <button class="btn btn-light rounded-circle btn-ripple m-1" type="button"
+                            onclick="viewProjectForm({{ $item->id }});">
+                            <img src="{{ asset('img/info.svg') }}" alt="" width="25px">
+                        </button>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <small
+                            style="color: rgb(164, 164, 164);">{{ $item->created_at->format('F j, Y, g:i a') }}</small>
+                        <small class="text-right" style="width: 50%; color: rgb(164, 164, 164);">State:</small>
+                        <div class="progress w-25">
+                            <div class="progress-bar" style="width: 25%;"></div>
                         </div>
-                        <hr>
-                        <div>
-                            <p class="paragraph-weight" style="font-size: 17px;">
-                                {{ $item->description }}
-                            </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small
-                                    style="color: rgb(164, 164, 164);">{{ $item->created_at->format('F j, Y, g:i a') }}</small>
-                                <small class="text-right" style="width: 50%; color: rgb(164, 164, 164);">State:</small>
-                                <div class="progress w-25">
-                                    <div class="progress-bar" style="width: 25%;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    @endforeach
-                    @else
-                    <a class="list-group-item list-group-item-light list-group-item-action">
-                        <div class="d-flex justify-content-center align-items-center">
-                            <h5 class="p-4">No projects have been added.</h5>
-                        </div>
-                    </a>
-                    @endif
-                </ul>
+                    </div>
+                </div>
             </div>
+            @endforeach
+            @else
+            <a class="list-group-item list-group-item-light list-group-item-action">
+                <div class="d-flex justify-content-center align-items-center">
+                    <h5 class="p-4">No projects have been added.</h5>
+                </div>
+            </a>
+            @endif
+            </ul>
+        </div>
         </div>
     </main>
 
     @endsection
 
     @section('foot')
-
     @endsection
 
-    {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-    {{ config('app.name', 'ServanTask') }}
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- Left Side Of Navbar -->
-        <ul class="navbar-nav mr-auto">
-
-        </ul>
-
-        <!-- Right Side Of Navbar -->
-        <ul class="navbar-nav ml-auto">
-            <!-- Authentication Links -->
-            @guest
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-            </li>
-            @if (Route::has('register'))
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-            </li>
-            @endif
-            @else
-            <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ Auth::user()->name }} <span class="caret"></span>
-                </a>
-
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                </div>
-            </li>
-            @endguest
-        </ul>
-    </div>
-    </div>
-    </nav>
-
-    <main class="py-4">
-        @yield('content')
-    </main> --}}
-
+    @include('project.project_add')
+    @include('project.project_edit')
+    @include('project.project_delete')
+    @include('project.project_view')
+    <script src="{{ asset('js/myasset/project.js') }}"></script>
+    {{-- <script src="{{ asset('js/myasset/validator.js') }}"></script> --}}
 </body>
 
 </html>

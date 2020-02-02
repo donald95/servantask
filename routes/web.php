@@ -18,11 +18,9 @@ Route::get('/', function () {
 // Route::get('/register', 'ViewsController@register')->name('register');
 // Route::get('/login', 'ViewsController@login')->name('login');
 
+Route::get('/projects', 'ProjectController@index');
+
 Route::group(['prefix' => 'projects'], function () {
-    Route::get('/', [
-        'uses' => 'ProjectController@index',
-        'as'   => 'project.index'
-    ]);
 
     Route::get('/{id}', [
         'uses' => 'ProjectController@show',
@@ -34,7 +32,7 @@ Route::group(['prefix' => 'projects'], function () {
         'as'   => 'project.edit'
     ]);
 
-    Route::post('/store', [
+    Route::post('/', [
         'uses' => 'ProjectController@store',
         'as'   => 'project.store'
     ]);
@@ -49,7 +47,6 @@ Route::group(['prefix' => 'projects'], function () {
         'as'   => 'project.destroy'
     ]);
 
-    Route::get('test/{id}', 'ProjectController@getUserProjects');
 });
 
 Auth::routes();

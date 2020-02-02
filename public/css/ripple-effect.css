@@ -1,0 +1,35 @@
+.btn-ripple {
+    border: none;
+    outline: none;
+    height: 35px;
+    width: 35px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.btn-ripple img {
+    transform: translateX(-8.5px) translateY(-3px);
+}
+
+.btn-ripple span {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 15px;
+    height: 15px;
+    opacity: 0;
+    animation: ripple 1s;
+}
+
+@keyframes ripple {
+    from {
+        opacity: 0.8;
+        transform: scale(0);
+    }
+    to {
+        opacity: 0;
+        transform: scale(10);
+    }
+}
