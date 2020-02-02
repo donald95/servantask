@@ -11,36 +11,24 @@
                 <div class="modal-body">
                     <table class="table table-striped" align="center">
                         <tr>
-                            <td class="text-right"><strong>Code:</strong></td>
-                            <td id="view_code"></td>
+                            <td class="text-right"><strong>Title:</strong></td>
+                            <td id="view_title"></td>
                         </tr>
                         <tr>
-                            <td class="text-right"><strong>Name:</strong></td>
-                            <td id="view_name"></td>
+                            <td class="text-right"><strong>Start date:</strong></td>
+                            <td id="view_date_start"></td>
                         </tr>
                         <tr>
-                            <td class="text-right"><strong>Lastname:</strong></td>
-                            <td id="view_last"></td>
+                            <td class="text-right"><strong>End date:</strong></td>
+                            <td id="view_date_end"></td>
                         </tr>
                         <tr>
-                            <td class="text-right"><strong>Faculty:</strong></td>
-                            <td id="view_facu"></td>
+                            <td class="text-right"><strong>Created at:</strong></td>
+                            <td id="view_created"></td>
                         </tr>
                         <tr>
-                            <td class="text-right"><strong>Section:</strong></td>
-                            <td id="view_sect"></td>
-                        </tr>
-                        <tr>
-                            <td class="text-right"><strong>Position:</strong></td>
-                            <td id="view_posi"></td>
-                        </tr>
-                        <tr>
-                            <td class="text-right"><strong>Salary:</strong></td>
-                            <td id="view_sala"></td>
-                        </tr>
-                        <tr>
-                            <td class="text-right"><strong>Birth date:</strong></td>
-                            <td id="view_date"></td>
+                            <td class="text-right"><strong>Updated at:</strong></td>
+                            <td id="view_updated"></td>
                         </tr>
                     </table>
                 </div>

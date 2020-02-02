@@ -22,6 +22,11 @@ Route::get('/projects', 'ProjectController@index');
 
 Route::group(['prefix' => 'projects'], function () {
 
+    Route::get('getproject/{id}', [
+        'uses' => 'ProjectController@getProject',
+        'as'   => 'project.getproject'
+    ]);
+
     Route::get('/{id}', [
         'uses' => 'ProjectController@show',
         'as'   => 'project.show'
@@ -38,8 +43,8 @@ Route::group(['prefix' => 'projects'], function () {
     ]);
 
     Route::match(['post', 'get'], '/update/{id}', [
-        'uses' => 'ProjectController@edit',
-        'as'   => 'project.edit'
+        'uses' => 'ProjectController@update',
+        'as'   => 'project.update'
     ]);
 
     Route::match(['post', 'get'], '/delete/{id}', [

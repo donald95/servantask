@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use  App\User;
-use App\Project;
+use Auth;
+use App\User;
 use App\Task;
+use App\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -38,31 +39,34 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        // $validator = Validator::make(
-        //     $request->input(),
-        //     array(
-        //         'title'       => 'required',
-        //         'description' => 'required',
-        //     )
-        // );
+        $validator = Validator::make(
+            $request->input(),
+            array(
+                'title'      => 'required',
+                'date_start' => 'required',
+                'date_end'   => 'required',
+            )
+        );
 
-        // if ($validator->fails()) {
-        //     return response()->json([
-        //         'error'   => true,
-        //         'message' => $validator->errors()
-        //     ], 422);
-        // }
+        if ($validator->fails()) {
+            return response()->json([
+                'error'   => true,
+                'message' => $validator->errors()->all()
+            ], 422);
+        }
 
-        // $project = Project::create($request->all());
+        $user = User::find(Auth::id());
 
-        // return response()->json([
-        //     'error'   => false,
-        //     'message' => $project
-        // ], 200);
+        $project = $user->projects()->create($request->all());
 
         return response()->json([
-            'message'   => 'Excelente',
+            'error'   => false,
+            'project' => $project
         ], 200);
+
+        // return response()->json([
+        //     'message'   => $request->input(),
+        // ], 200);
     }
 
     /**
@@ -101,8 +105,11 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
+        $project = Project::findOrFail($id);
+
         return response()->json([
-            'message'   => 'Excelente',
+            'error' => false,
+            'project'   => $project,
         ], 200);
     }
 
@@ -115,8 +122,34 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validator  = Validator::make(
+            $request->input(),
+            array(
+                'title'      => 'required',
+                'date_start' => 'required',
+                'date_end'   => 'required',
+            )
+        );
+
+        if ($validator->fails()) {
+            return response()->json([
+                'error' => true,
+                'message' => $validator->errors()
+            ], 422);
+        }
+
+        $data = array(
+            'title'       => $request->title,
+            'date_start'  => $request->date_start,
+            'date_end'    => $request->date_end,
+            'description' => $request->description
+        );
+
+        Project::whereId($id)->update($data);
+
         return response()->json([
-            'message'   => 'Excelente',
+            'success' => 'data was successfully updated',
+            'title'   =>  $request->title
         ], 200);
     }
 
@@ -128,8 +161,11 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
+        $project = Project::findOrFail($id);
+        $project->delete();
+
         return response()->json([
-            'message'   => 'Excelente',
+            'success'   => 'Data was successfully deleted',
         ], 200);
     }
 
@@ -144,5 +180,13 @@ class ProjectController extends Controller
     {
         $projects = User::find($user_id)->projects;
         return $projects;
+    }
+
+    public function getProject($id)
+    {
+        $project = Project::find($id);
+        return response()->json([
+            'project'   => $project
+        ], 200);
     }
 }

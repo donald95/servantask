@@ -78,7 +78,7 @@
     <section class="section-wrap-shadow">
         <section id="section-main" style="width: 100%; height: 100%;">
 
-            <div class="row" style="width: 100%; padding: 6.5%">
+            <div class="row" style="width: 100%; padding-left: 8%; padding-right: 6.5%; padding-top: 30px;">
                 <div class="col-sm">
                     <div class="container rounded p-4" style="background-color: rgba(55, 55, 55, 0.3);">
                         <div class="w-75" style="margin: auto;">
