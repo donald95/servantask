@@ -222,7 +222,7 @@ section div div {
     display: flex;
 }
 
-.button-send {
+.button-send, .button-note {
     width: 35px;
     height: 35px;
     overflow: hidden;
@@ -271,7 +271,6 @@ form div {
 
 #welcome-text {
     font-family: 'Open Sans', sans-serif;
-
 }
 
 #welcome {
@@ -279,9 +278,12 @@ form div {
     align-items: center;
     justify-content: center;
     border: 0.5px solid rgb(112, 112, 112);
-
 }
 
 #welcome, #register {
     margin: 30px;
+}
+
+.box-info {
+    border: 1px solid #dedede;
 }

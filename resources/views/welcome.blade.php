@@ -62,7 +62,6 @@
             }
 
             .box-info {
-                border: 1px solid #dedede;
                 width: 450px;
             }
 
@@ -75,6 +74,30 @@
                 margin: 15px;
             }
 
+            #chat-container {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+
+            .talk-bubble {
+                width: 230px;
+                font-size: 13px;
+            }
+
+            .profile-container {
+                width: 40px;
+                height: 40px;
+            }
+
+            .profile-container img {
+                width: 55px;
+            }
+
+            .space-talk-bubble {
+                width: 0px !important;
+            }
+
+            .control-talk {}
         }
 
         @media (max-width: 991.98px) {
@@ -233,7 +256,7 @@
 
             <div class="row p-1" style="justify-content: center; align-items: center;">
 
-                <div class="box-info bg-light m-4" style="font-size: 15px; width: 300px;">
+                <div class="box-info bg-light m-4" style="font-size: 15px; width: 330px;">
                     <h5 class="pl-4 pr-4 pt-4">Get Started With Us</h5>
                     <hr>
                     <p class="pl-4 pr-4 paragraph">
@@ -246,7 +269,7 @@
                     </small>
                 </div>
 
-                <div class="box-info bg-light m-4" style="font-size: 15px; width: 300px;">
+                <div class="box-info bg-light m-4" style="font-size: 15px; width: 330px;">
                     <h5 class="pl-4 pr-4 pt-4">Create A Project</h5>
                     <hr>
                     <p class="pl-4 pr-4 paragraph">
@@ -259,7 +282,7 @@
                     </small>
                 </div>
 
-                <div class="box-info bg-light m-4" style="font-size: 15px; width: 300px;">
+                <div class="box-info bg-light m-4" style="font-size: 15px; width: 330px;">
                     <h5 class="pl-4 pr-4 pt-4">Manage Your Projects</h5>
                     <hr>
                     <p class="pl-4 pr-4 paragraph">
@@ -271,7 +294,7 @@
                         <a class="text-primary dash-text-intolink" href="">Begin to manage your tasks </a>
                     </small>
                 </div>
-                <div class="box-info bg-light m-4" style="font-size: 15px; width: 300px;">
+                <div class="box-info bg-light m-4" style="font-size: 15px; width: 330px;">
                     <h5 class="pl-4 pr-4 pt-4">Get Reminder</h5>
                     <hr>
                     <p class="pl-4 pr-4 paragraph">
@@ -287,11 +310,12 @@
         </section>
     </section>
     <br><br><br>
-    <div class="container p-2" style="height: auto;">
+    <div class="p-2" style="width: auto; height: auto;">
         <div class="row">
-            <div class="container col-sm p-4 center-bubbles rounded pattern-color" style="height: 700px; width: 50%;">
+            <div id="chat-container" class="container col-sm p-4 center-bubbles rounded pattern-color"
+                style="height: 700px;">
                 <div class="chat">
-                    <div style="width: 120px;"></div>
+                    <div class="space-talk-bubble" style="width: 120px;"></div>
                     <div class="talk-bubble round border-box tri-right-me right-top color-bubble-me">
                         <small class="ml-3 font-weight-bold" style="color: rgb(164, 164, 164);">Sara Andea Melo</small>
                         <div class="talktext-me">
@@ -311,12 +335,12 @@
                     <div class="talk-bubble round border-box tri-right-you right-top color-bubble-you text-white">
                         <small class="ml-3 font-weight-bold" style="color: rgb(164, 164, 164);">惨めな雌犬</small>
                         <div class="talktext-you">
-                            <p>明日の活動はどうですか？</p>
+                            <p>Ohayougozaimasu! 明日の活動はどうですか？</p>
                         </div>
                         <small style="color: rgb(164, 164, 164); margin-left: 180px; font-size: 11px;">December 4th,
                             2019</small c>
                     </div>
-                    <div style="width: 120px;"></div>
+                    <div class="space-talk-bubble" style="width: 120px;"></div>
                 </div>
                 <div class="chat">
                     <div class="profile-container margin-right-profile">
@@ -330,10 +354,10 @@
                         <small style="color: rgb(164, 164, 164); margin-left: 180px; font-size: 11px;">December 4th,
                             2019</small c>
                     </div>
-                    <div style="width: 120px;"></div>
+                    <div class="space-talk-bubble" style="width: 120px;"></div>
                 </div>
                 <div class="chat">
-                    <div style="width: 120px;"></div>
+                    <div class="space-talk-bubble" style="width: 120px;"></div>
                     <div class="talk-bubble round border-box tri-right-me right-top color-bubble-me">
                         <small class="ml-3 font-weight-bold" style="color: rgb(164, 164, 164);">Sara Andea Melo</small>
                         <div class="talktext-me">
@@ -346,17 +370,27 @@
                         <img src="{{ asset('img/avatar/avr002.jpg') }}" class="profile" alt="">
                     </div>
                 </div>
-                <form class="form-inline mt-2 form-width">
-                    <input type="text" class="form-control mr-2" style="width: 80%;" placeholder="Message..." disabled>
+                <form class="mt-2 form-width" style="display: flex;
+                align-items: center;
+                justify-content: center;">
+
+
+                    <input type="text" class="form-control mr-2 control-talk" style="width: 65%;"
+                        placeholder="Message..." disabled>
+
+
                     <div class="button-send">
                         <img src="{{ asset('img/send-button.svg') }}" class="img-send" alt="">
                     </div>
-                    <div class="button-send">
+
+                    <div class="button-note">
                         <img src="{{ asset('img/voice-message-button.svg') }}" class="img-voice-note" alt="">
                     </div>
+
+
                 </form>
             </div>
-            <div class="col-sm">
+            <div class="col-sm p-4 m-4" style="margin-right: 20px; margin-left: 20px;">
                 <div class="container">
                     <div class="w-75" style="margin: auto;">
                         <h1 class="text-center">Exchange messages related to your projects</h1>
