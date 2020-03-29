@@ -57,7 +57,6 @@
         width: 35px;
         height: 35px;
         background-color: rgb(92, 92, 92);
-        ;
         border-radius: 2px;
         font-size: 20px;
         color: #ffffff;

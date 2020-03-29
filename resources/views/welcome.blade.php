@@ -8,34 +8,83 @@
     <title>Let's go, you get started now</title>
     <link rel="stylesheet" href="{{ asset('css/section-main.css') }}">
     <style media="screen">
-        @media (max-width: 575.98px) {}
+        @media (max-width: 575.98px) {
+            #main-image {
+                display: none;
+            }
+
+            #welcome {
+                width: 100%;
+                border-radius: 0;
+                margin: 0px !important;
+                text-shadow: 0.2px 0.2px 4px #454545;
+            }
+
+        }
 
         @media (max-width: 767.98px) {
-            .order-box {
-                display: flex;
+
+            #main-image {
+                display: none;
             }
 
-            .width-card {
-                width: 35%;
+            #section-main {
+                background-color: white;
+                clip-path: unset;
             }
 
-            .form-register {
-                width: 65%;
+            .section-wrap-shadow {
+                filter: none;
             }
+
+            #presentation {
+                width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+
+            .navbar {
+                background-color: #343a40 !important;
+            }
+
+            .navbar li a,
+            .navbar .navbar-brand {
+                color: #fff !important;
+            }
+
+            .navbar-light .navbar-toggler .navbar-toggler-icon {
+                background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgb(255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+            }
+
+            .btn-outline-dark {
+                color: #f8f9fa !important;
+                border-color: #f8f9fa !important;
+            }
+
+            .box-info {
+                border: 1px solid #dedede;
+                width: 450px;
+            }
+
+            #welcome {
+                margin: 15px;
+            }
+
+            #register {
+                border: 1px solid #dedede;
+                margin: 15px;
+            }
+
         }
 
         @media (max-width: 991.98px) {
-            .order-box {
-                display: block;
+            #welcome {
+                margin: 15px;
             }
 
-            .width-card {
-                width: 100%;
-                margin-bottom: 20px;
-            }
-
-            .form-register {
-                width: 100%;
+            #register {
+                border: 1px solid #dedede;
+                margin: 15px;
             }
         }
 
@@ -45,9 +94,9 @@
 
 <body>
     @section('head')
-    <div class="text-center">
-        <h1 class="display-4">
-            <img src="{{ asset('img/angry-dog.svg') }}" alt="servant" style="width: 70px;">&nbsp;ServanTask.com
+    <div class="text-center" style="margin-top: 23px;">
+        <h1 class="display-4" style="font-size: 40px;">
+            <img id="dog" src="{{ asset('img/angry-dog.svg') }}" alt="servant" style="width: 70px;">&nbsp;ServanTask.com
         </h1>
         <h3 class="font-weight-light">Your dreams, our work.</h3>
     </div>
@@ -76,14 +125,21 @@
     @section('body')
     <img id="main-image" src="{{ asset('img/meeting.jpg') }}" alt="aplication-management-project">
     <section class="section-wrap-shadow">
-        <section id="section-main" style="width: 100%; height: 100%;">
 
-            <div class="row" style="width: 100%; padding-left: 8%; padding-right: 6.5%; padding-top: 30px;">
-                <div class="col-sm">
-                    <div class="container rounded p-4" style="background-color: rgba(55, 55, 55, 0.3);">
+        <section id="section-main" style="width: 100%; height: auto;">
+
+            <div id="presentation" class="row justify-content-md-center" style="width: 100%; margin: auto;">
+
+
+                <div id="welcome" class="col-md" style="background-color: rgba(51, 51, 51, 0.7);">
+                    <div class="container p-4">
                         <div class="w-75" style="margin: auto;">
                             <h1 class="text-center text-light">Welcome to ServanTask</h1>
-                            <p class="paragraph text-light" style="font-size: 16px;">
+                            <p id="welcome-text" class="text-light text-justify" style="font-size: 16px;">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Ea facere excepturi doloribus error omnis ut ab vel incidunt nemo
+                                laboriosam? Veritatis perspiciatis sint distinctio nam? Illo dolor
+                                dolore porro laborum. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                 Ea facere excepturi doloribus error omnis ut ab vel incidunt nemo
                                 laboriosam? Veritatis perspiciatis sint distinctio nam? Illo dolor
@@ -93,10 +149,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-light col-sm rounded p-4">
+
+                <div id="register" class="col-md-4 bg-light rounded p-4">
                     <div class="card mb-3 width-card rounded">
                         <section class="">
-                            <h1 class="w-100 p-3 text-white rounded-top text-center" style="background-color: rgb(1, 45, 83);">
+                            <h1 class="w-100 p-3 text-white rounded-top text-center"
+                                style="background-color: rgb(1, 45, 83);">
                                 Sing up and enjoy
                             </h1>
                             <p class="p-3 paragraph">
@@ -170,13 +228,12 @@
                         </button>
                     </form>
                 </div>
-
             </div>
 
 
             <div class="row p-1" style="justify-content: center; align-items: center;">
 
-                <div class="bg-light m-4" style="font-size: 15px; width: 250px;">
+                <div class="box-info bg-light m-4" style="font-size: 15px; width: 300px;">
                     <h5 class="pl-4 pr-4 pt-4">Get Started With Us</h5>
                     <hr>
                     <p class="pl-4 pr-4 paragraph">
@@ -189,7 +246,7 @@
                     </small>
                 </div>
 
-                <div class="bg-light m-4" style="font-size: 15px; width: 250px;">
+                <div class="box-info bg-light m-4" style="font-size: 15px; width: 300px;">
                     <h5 class="pl-4 pr-4 pt-4">Create A Project</h5>
                     <hr>
                     <p class="pl-4 pr-4 paragraph">
@@ -202,7 +259,7 @@
                     </small>
                 </div>
 
-                <div class="bg-light m-4" style="font-size: 15px; width: 250px;">
+                <div class="box-info bg-light m-4" style="font-size: 15px; width: 300px;">
                     <h5 class="pl-4 pr-4 pt-4">Manage Your Projects</h5>
                     <hr>
                     <p class="pl-4 pr-4 paragraph">
@@ -214,7 +271,7 @@
                         <a class="text-primary dash-text-intolink" href="">Begin to manage your tasks </a>
                     </small>
                 </div>
-                <div class="bg-light m-4" style="font-size: 15px; width: 250px;">
+                <div class="box-info bg-light m-4" style="font-size: 15px; width: 300px;">
                     <h5 class="pl-4 pr-4 pt-4">Get Reminder</h5>
                     <hr>
                     <p class="pl-4 pr-4 paragraph">

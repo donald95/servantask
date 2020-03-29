@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 .paragraph {
     font-family: 'Nunito', sans-serif;
     font-size: 14px;
@@ -267,4 +267,21 @@ form div {
     background: url('../img/pattern.png') left top repeat;
     background-size: 250px auto;
     border: 0.5px solid rgba(190, 190, 190, 0.8);
+}
+
+#welcome-text {
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+#welcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.5px solid rgb(112, 112, 112);
+
+}
+
+#welcome, #register {
+    margin: 30px;
 }
