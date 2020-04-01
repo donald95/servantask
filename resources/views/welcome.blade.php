@@ -75,13 +75,17 @@
             }
 
             #chat-container {
-                margin-left: 15px;
-                margin-right: 15px;
+                margin-bottom: 15px;
             }
 
             .talk-bubble {
-                width: 230px;
+                width: 250px;
                 font-size: 13px;
+            }
+
+            .chat-date {
+                font-size: 9px !important;
+                margin-left: 140px !important;
             }
 
             .profile-container {
@@ -97,7 +101,10 @@
                 width: 0px !important;
             }
 
-            .control-talk {}
+            #info {
+                margin: 0;
+            }
+
         }
 
         @media (max-width: 991.98px) {
@@ -109,6 +116,7 @@
                 border: 1px solid #dedede;
                 margin: 15px;
             }
+
         }
 
         @media (max-width: 1199.98px) {}
@@ -309,11 +317,14 @@
             </div>
         </section>
     </section>
-    <br><br><br>
-    <div class="p-2" style="width: auto; height: auto;">
-        <div class="row">
-            <div id="chat-container" class="container col-sm p-4 center-bubbles rounded pattern-color"
-                style="height: 700px;">
+
+
+    <div id="info" class="row w-100 ml-0 p-3">
+
+
+        <div id="chat-container" class="col-md p-4 center-bubbles rounded pattern-color">
+
+            <div>
                 <div class="chat">
                     <div class="space-talk-bubble" style="width: 120px;"></div>
                     <div class="talk-bubble round border-box tri-right-me right-top color-bubble-me">
@@ -321,8 +332,9 @@
                         <div class="talktext-me">
                             <p>Hey, Where is the plan of tomorrow?</p>
                         </div>
-                        <small style="color: rgb(164, 164, 164); margin-left: 180px; font-size: 11px;">December 4th,
-                            2019</small c>
+                        <small class="chat-date"
+                            style="color: rgb(164, 164, 164); margin-left: 180px; font-size: 11px;">December 4th,
+                            2019</small>
                     </div>
                     <div class="profile-container margin-left-profile">
                         <img src="{{ asset('img/avatar/avr002.jpg') }}" class="profile" alt="">
@@ -337,8 +349,9 @@
                         <div class="talktext-you">
                             <p>Ohayougozaimasu! 明日の活動はどうですか？</p>
                         </div>
-                        <small style="color: rgb(164, 164, 164); margin-left: 180px; font-size: 11px;">December 4th,
-                            2019</small c>
+                        <small class="chat-date"
+                            style="color: rgb(164, 164, 164); margin-left: 180px; font-size: 11px;">December 4th,
+                            2019</small>
                     </div>
                     <div class="space-talk-bubble" style="width: 120px;"></div>
                 </div>
@@ -351,8 +364,9 @@
                         <div class="talktext-you">
                             <p>El proyecto de mañana estará listo, tenemos que hablar con las partes interesadas</p>
                         </div>
-                        <small style="color: rgb(164, 164, 164); margin-left: 180px; font-size: 11px;">December 4th,
-                            2019</small c>
+                        <small class="chat-date"
+                            style="color: rgb(164, 164, 164); margin-left: 180px; font-size: 11px;">December 4th,
+                            2019</small>
                     </div>
                     <div class="space-talk-bubble" style="width: 120px;"></div>
                 </div>
@@ -363,62 +377,60 @@
                         <div class="talktext-me">
                             <p>Wofür stehen wir heute an?</p>
                         </div>
-                        <small style="color: rgb(164, 164, 164); margin-left: 180px; font-size: 11px;">December 4th,
-                            2019</small c>
+                        <small class="chat-date"
+                            style="color: rgb(164, 164, 164); margin-left: 180px; font-size: 11px;">December 4th,
+                            2019</small>
                     </div>
                     <div class="profile-container margin-left-profile">
                         <img src="{{ asset('img/avatar/avr002.jpg') }}" class="profile" alt="">
                     </div>
                 </div>
-                <form class="mt-2 form-width" style="display: flex;
-                align-items: center;
-                justify-content: center;">
-
-
-                    <input type="text" class="form-control mr-2 control-talk" style="width: 65%;"
-                        placeholder="Message..." disabled>
-
-
-                    <div class="button-send">
-                        <img src="{{ asset('img/send-button.svg') }}" class="img-send" alt="">
-                    </div>
-
-                    <div class="button-note">
-                        <img src="{{ asset('img/voice-message-button.svg') }}" class="img-voice-note" alt="">
-                    </div>
-
-
-                </form>
             </div>
-            <div class="col-sm p-4 m-4" style="margin-right: 20px; margin-left: 20px;">
-                <div class="container">
-                    <div class="w-75" style="margin: auto;">
-                        <h1 class="text-center">Exchange messages related to your projects</h1>
-                        <p class="paragraph">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Ea facere excepturi doloribus error omnis ut ab vel incidunt nemo
-                            laboriosam? Veritatis perspiciatis sint distinctio nam? Illo dolor
-                            dolore porro laborum. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                            Ullam amet laborum deserunt at reprehenderit illum,
-                            accusamus magni ipsum neque vero sit. Consequatur commodi
-                            delectus soluta eius maiores hic ut officia.
-                        </p>
-                        <a class="btn btn-info btn-sm" href="">Let's get started</a>
-                    </div>
-                    <div class="w-75 pt-5" style="margin: auto;">
-                        <h1 class="text-center">Share files</h1>
-                        <p class="paragraph">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Ea facere excepturi doloribus error omnis ut ab vel incidunt nemo
-                            laboriosam? Veritatis perspiciatis sint distinctio nam? Illo dolor
-                            dolore porro laborum. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                        </p>
-                        <a class="btn btn-info btn-sm" href="">Let's share</a>
-                    </div>
+            <form class="mt-2 form-width" style="display: flex; align-items: center; justify-content: center;">
+                <input type="text" class="form-control mr-2" style="width: 75%; border-radius: 160px;"
+                    placeholder="Message..." disabled>
+
+                <div class="button-send">
+                    <img src="{{ asset('img/send-button.svg') }}" class="img-send" alt="">
+                </div>
+            </form>
+        </div>
+
+
+        <div id="info" class="col-md p-4 bg-light rounded" style="">
+            <div class="container">
+                <div class="w-75" style="margin: auto;">
+                    <h1 class="text-center">Exchange messages related to your projects</h1>
+                    <p class="paragraph">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ea facere excepturi doloribus error omnis ut ab vel incidunt nemo
+                        laboriosam? Veritatis perspiciatis sint distinctio nam? Illo dolor
+                        dolore porro laborum. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        Ullam amet laborum deserunt at reprehenderit illum,
+                        accusamus magni ipsum neque vero sit. Consequatur commodi
+                        delectus soluta eius maiores hic ut officia.
+                    </p>
+                    <a class="btn btn-info btn-sm" href="">Let's get started</a>
+                </div>
+                <div class="w-75 pt-5" style="margin: auto;">
+                    <h1 class="text-center">Share files</h1>
+                    <p class="paragraph">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ea facere excepturi doloribus error omnis ut ab vel incidunt nemo
+                        laboriosam? Veritatis perspiciatis sint distinctio nam? Illo dolor
+                        dolore porro laborum. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    </p>
+                    <a class="btn btn-info btn-sm" href="">Let's share</a>
                 </div>
             </div>
         </div>
+
     </div>
+
+
+
+
+
     @endsection
     @section('foot')
 
