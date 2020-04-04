@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Let's go, you get started now</title>
+    <link rel="icon" href="{{ asset('img/angry-dog.ico') }}" type="image/ico"/>
     <link rel="stylesheet" href="{{ asset('css/section-main.css') }}">
     <style media="screen">
         @media (max-width: 575.98px) {
@@ -127,14 +128,17 @@
     @section('head')
     <div class="text-center" style="margin-top: 23px;">
         <h1 class="display-4" style="font-size: 40px;">
-            <img id="dog" src="{{ asset('img/angry-dog.svg') }}" alt="servant" style="width: 70px;">&nbsp;ServanTask.com
+            <img id="dog-one" src="{{ asset('img/angry-dog.svg') }}" alt="servant"
+                style="width: 70px;">&nbsp;ServanTask.com
         </h1>
         <h3 class="font-weight-light">Your dreams, our work.</h3>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top color-nav"
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top navbar-transparent color-nav"
         style="box-shadow: 0px 3px 3px 0px rgba(185, 184, 184, 0.726);">
         <a class="navbar-brand" href="{{ route('welcome') }}">
-            <img src="{{ asset('img/angry-dog.svg') }}" alt="servant" style="width: 25px;">
+
+            <img id="dog-two" src="{{ asset('img/angry-dog.svg') }}" alt="servant" width="25px">
+
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSopportedContent"
             aria-controls="navbarSopportedContent" aria-expanded="false">
@@ -152,6 +156,8 @@
                 in</a>
         </div>
     </nav>
+    <script src="{{ asset('js/jquery/jquery-3.4.1.js') }}"></script>
+    <script src="{{ asset('js/myasset/change-icon-welcome.js') }}"></script>
     @endsection
     @section('body')
     <img id="main-image" src="{{ asset('img/meeting.jpg') }}" alt="aplication-management-project">
@@ -385,15 +391,16 @@
                         <img src="{{ asset('img/avatar/avr002.jpg') }}" class="profile" alt="">
                     </div>
                 </div>
-            </div>
-            <form class="mt-2 form-width" style="display: flex; align-items: center; justify-content: center;">
-                <input type="text" class="form-control mr-2" style="width: 75%; border-radius: 160px;"
-                    placeholder="Message..." disabled>
+                <form class="mt-2 form-width" style="display: flex; align-items: center; justify-content: center;">
+                    <input type="text" class="form-control mr-2" style="width: 75%; border-radius: 160px;"
+                        placeholder="Message..." disabled>
 
-                <div class="button-send">
-                    <img src="{{ asset('img/send-button.svg') }}" class="img-send" alt="">
-                </div>
-            </form>
+                    <div class="button-send">
+                        <img src="{{ asset('img/send-button.svg') }}" class="img-send" alt="">
+                    </div>
+                </form>
+            </div>
+
         </div>
 
 
@@ -426,10 +433,6 @@
         </div>
 
     </div>
-
-
-
-
 
     @endsection
     @section('foot')
