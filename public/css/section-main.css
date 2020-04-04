@@ -53,39 +53,6 @@ section div div {
     background-color: rgba(243, 243, 243);
 }
 
-/* .paralelogram {
-    background-color: rgb(49, 143, 250);
-    width: 100%;
-    height: 4px;
-    transform: skew(45deg);
-    -webkit-transform: skew(45deg);
-    -moz-transform: skew(45deg);
-    -o-transform: skew(45deg);
-    margin-top: 10px;
-} */
-
-#round-footer-one {
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-}
-
-#round-footer-two {
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-}
-
-.box-shadow-section {
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-}
-
-#division {
-    text-align: center;
-    padding-top: 30px;
-}
-
 .talk-bubble {
     margin: 5px;
     display: block;
@@ -247,12 +214,6 @@ section div div {
     border-radius: 5px;
 }
 
-/* .img-voice-note {
-    width: 20px;
-    margin-left: 7px;
-    margin-top: 7px;
-} */
-
 form div {
     margin-right: 5px;
 }
@@ -287,4 +248,3 @@ form div {
 .box-info {
     border: 1px solid #dedede;
 }
-

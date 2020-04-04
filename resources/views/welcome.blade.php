@@ -6,8 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Let's go, you get started now</title>
-    <link rel="icon" href="{{ asset('img/angry-dog.ico') }}" type="image/ico"/>
+    <link rel="icon" href="{{ asset('img/angry-dog.ico') }}" type="image/ico" />
     <link rel="stylesheet" href="{{ asset('css/section-main.css') }}">
+
+    {{-- Seccion de responsividad de la pagina. --}}
     <style media="screen">
         @media (max-width: 575.98px) {
             #main-image {
@@ -51,6 +53,10 @@
             .navbar li a,
             .navbar .navbar-brand {
                 color: #fff !important;
+            }
+
+            .navbar-light .navbar-toggler {
+                border: 0.5px solid rgb(155, 155, 155) !important;
             }
 
             .navbar-light .navbar-toggler .navbar-toggler-icon {
@@ -102,10 +108,6 @@
                 width: 0px !important;
             }
 
-            #info {
-                margin: 0;
-            }
-
         }
 
         @media (max-width: 991.98px) {
@@ -125,7 +127,9 @@
 </head>
 
 <body>
+    {{-- Seccion cabecera dentro de la etiqueta cuerpo. --}}
     @section('head')
+    {{-- Logo y nombre de la pagina. --}}
     <div class="text-center" style="margin-top: 23px;">
         <h1 class="display-4" style="font-size: 40px;">
             <img id="dog-one" src="{{ asset('img/angry-dog.svg') }}" alt="servant"
@@ -133,6 +137,7 @@
         </h1>
         <h3 class="font-weight-light">Your dreams, our work.</h3>
     </div>
+    {{-- Navbar de la pagina. --}}
     <nav class="navbar navbar-expand-lg navbar-light sticky-top navbar-transparent color-nav"
         style="box-shadow: 0px 3px 3px 0px rgba(185, 184, 184, 0.726);">
         <a class="navbar-brand" href="{{ route('welcome') }}">
@@ -157,17 +162,17 @@
         </div>
     </nav>
     <script src="{{ asset('js/jquery/jquery-3.4.1.js') }}"></script>
+    {{-- Cambio de imagen segun el dispositivo y redimensionamiento de la pagina. --}}
     <script src="{{ asset('js/myasset/change-icon-welcome.js') }}"></script>
     @endsection
+
+    {{-- Seccion del cuerpo (blade) dentro de la etiqueta cuerpo (body) --}}
     @section('body')
     <img id="main-image" src="{{ asset('img/meeting.jpg') }}" alt="aplication-management-project">
     <section class="section-wrap-shadow">
-
         <section id="section-main" style="width: 100%; height: auto;">
-
             <div id="presentation" class="row justify-content-md-center" style="width: 100%; margin: auto;">
-
-
+                {{-- Bienvenida de la pagina. --}}
                 <div id="welcome" class="col-md" style="background-color: rgba(51, 51, 51, 0.7);">
                     <div class="container p-4">
                         <div class="w-75" style="margin: auto;">
@@ -186,7 +191,7 @@
                         </div>
                     </div>
                 </div>
-
+                {{-- Registro de la pagina principal. --}}
                 <div id="register" class="col-md-4 bg-light rounded p-4">
                     <div class="card mb-3 width-card rounded">
                         <section class="">
@@ -267,9 +272,8 @@
                 </div>
             </div>
 
-
+            {{-- Seccion de informacion de la pagina, cuadros de informacion. --}}
             <div class="row p-1" style="justify-content: center; align-items: center;">
-
                 <div class="box-info bg-light m-4" style="font-size: 15px; width: 330px;">
                     <h5 class="pl-4 pr-4 pt-4">Get Started With Us</h5>
                     <hr>
@@ -282,7 +286,6 @@
                         <a class="text-primary dash-text-intolink" href="">How can help you?</a>
                     </small>
                 </div>
-
                 <div class="box-info bg-light m-4" style="font-size: 15px; width: 330px;">
                     <h5 class="pl-4 pr-4 pt-4">Create A Project</h5>
                     <hr>
@@ -295,7 +298,6 @@
                         <a class="text-primary dash-text-intolink" href="">Creat a project</a>
                     </small>
                 </div>
-
                 <div class="box-info bg-light m-4" style="font-size: 15px; width: 330px;">
                     <h5 class="pl-4 pr-4 pt-4">Manage Your Projects</h5>
                     <hr>
@@ -323,13 +325,9 @@
             </div>
         </section>
     </section>
-
-
-    <div id="info" class="row w-100 ml-0 p-3">
-
-
+    {{-- Seccion de vista de algunas caracteristicas de la aplicacion. --}}
+    <div class="row w-100 ml-0 p-3">
         <div id="chat-container" class="col-md p-4 center-bubbles rounded pattern-color">
-
             <div>
                 <div class="chat">
                     <div class="space-talk-bubble" style="width: 120px;"></div>
@@ -400,11 +398,9 @@
                     </div>
                 </form>
             </div>
-
         </div>
-
-
-        <div id="info" class="col-md p-4 bg-light rounded" style="">
+        {{-- Seccion de otras caracteristicas. --}}
+        <div class="col-md p-4 bg-light rounded" style="">
             <div class="container">
                 <div class="w-75" style="margin: auto;">
                     <h1 class="text-center">Exchange messages related to your projects</h1>
@@ -433,8 +429,9 @@
         </div>
 
     </div>
-
     @endsection
+
+    {{-- Seccion de pie de pagina (blade). --}}
     @section('foot')
 
     @endsection
