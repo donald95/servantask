@@ -4,7 +4,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#343a40">
     <title>Let's go, you get started now</title>
     <link rel="icon" href="{{ asset('img/angry-dog.ico') }}" type="image/ico" />
     <link rel="stylesheet" href="{{ asset('css/section-main.css') }}">
@@ -74,6 +75,7 @@
 
             #welcome {
                 margin: 15px;
+                background-color: rgba(51, 51, 51, 0.7) !important;
             }
 
             #register {
@@ -108,6 +110,11 @@
                 width: 0px !important;
             }
 
+            #feature-two,
+            #feature-one {
+                width: 100% !important;
+            }
+
         }
 
         @media (max-width: 991.98px) {
@@ -132,21 +139,18 @@
     {{-- Logo y nombre de la pagina. --}}
     <div class="text-center" style="margin-top: 23px;">
         <h1 class="display-4" style="font-size: 40px;">
-            <img id="dog-one" src="{{ asset('img/angry-dog.svg') }}" alt="servant"
-                style="width: 70px;">&nbsp;ServanTask.com
+            <img id="dog-one" src="{{ asset('img/angry-dog.svg') }}" alt="servant" style="width: 70px;">&nbsp;ServanTask.com
         </h1>
         <h3 class="font-weight-light">Your dreams, our work.</h3>
     </div>
     {{-- Navbar de la pagina. --}}
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top navbar-transparent color-nav"
-        style="box-shadow: 0px 3px 3px 0px rgba(185, 184, 184, 0.726);">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top navbar-transparent color-nav" style="box-shadow: 0px 3px 3px 0px rgba(185, 184, 184, 0.726);">
         <a class="navbar-brand" href="{{ route('welcome') }}">
 
             <img id="dog-two" src="{{ asset('img/angry-dog.svg') }}" alt="servant" width="25px">
 
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSopportedContent"
-            aria-controls="navbarSopportedContent" aria-expanded="false">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSopportedContent" aria-controls="navbarSopportedContent" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSopportedContent">
@@ -155,10 +159,8 @@
                 <li class="nav-item"><a class="nav-link" href="">Forum</a></li>
                 <li class="nav-item"><a class="nav-link" href="">About us</a></li>
             </ul>
-            <a href="{{ route('register') }}" class="btn btn-default btn-light mr-2" role="button"
-                aria-pressed="true">Sign up</a>
-            <a href="{{ route('login') }}" class="btn btn-outline-dark btn-md" role="button" aria-pressed="true">Sign
-                in</a>
+            <a href="{{ route('register') }}" class="btn btn-default btn-light mr-2" role="button" aria-pressed="true">Sign up</a>
+            <a href="{{ route('login') }}" class="btn btn-outline-dark btn-md" role="button" aria-pressed="true">Sign in</a>
         </div>
     </nav>
     <script src="{{ asset('js/jquery/jquery-3.4.1.js') }}"></script>
@@ -173,11 +175,11 @@
         <section id="section-main" style="width: 100%; height: auto;">
             <div id="presentation" class="row justify-content-md-center" style="width: 100%; margin: auto;">
                 {{-- Bienvenida de la pagina. --}}
-                <div id="welcome" class="col-md" style="background-color: rgba(51, 51, 51, 0.7);">
+                <div id="welcome" class="col-md" style="background-color: rgba(51, 51, 51, 0.5);">
                     <div class="container p-4">
-                        <div class="w-75" style="margin: auto;">
+                        <div style="margin: auto;">
                             <h1 class="text-center text-light">Welcome to ServanTask</h1>
-                            <p id="welcome-text" class="text-light text-justify" style="font-size: 16px;">
+                            <p id="welcome-text" class="text-light" style="font-size: 16px;">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                                 Ea facere excepturi doloribus error omnis ut ab vel incidunt nemo
                                 laboriosam? Veritatis perspiciatis sint distinctio nam? Illo dolor
@@ -195,8 +197,7 @@
                 <div id="register" class="col-md-4 bg-light rounded p-4">
                     <div class="card mb-3 width-card rounded">
                         <section class="">
-                            <h1 class="w-100 p-3 text-white rounded-top text-center"
-                                style="background-color: rgb(1, 45, 83);">
+                            <h1 class="w-100 p-3 text-white rounded-top text-center" style="background-color: rgb(1, 45, 83);">
                                 Sing up and enjoy
                             </h1>
                             <p class="p-3 paragraph">
@@ -213,9 +214,7 @@
                                     <i class="icon" style="font-size: 100%;">&#xe800;</i>
                                 </span>
                             </div>
-                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                name="name" value="{{ old('name') }}" required autocomplete="name" autofocus
-                                placeholder="Name" aria-label="Recipient's name">
+                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Name" aria-label="Recipient's name">
 
                             @error('name')
                             <span class="invalid-feedback" role="alert">
@@ -229,9 +228,7 @@
                                     <i class="icon" style="font-size: 100%;">&#xe802;</i>
                                 </span>
                             </div>
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                name="email" value="{{ old('email') }}" required autocomplete="email"
-                                placeholder="E-mail" aria-label="Recipient's email">
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="E-mail" aria-label="Recipient's email">
 
                             @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -245,9 +242,7 @@
                                     <i class="icon" style="font-size: 100%;">&#xe801;</i>
                                 </span>
                             </div>
-                            <input id="password" type="password"
-                                class="form-control @error('password') is-invalid @enderror" name="password" required
-                                autocomplete="new-password" placeholder="Password" aria-label="Recipient's password">
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password" aria-label="Recipient's password">
 
                             @error('password')
                             <span class="invalid-feedback" role="alert">
@@ -261,9 +256,7 @@
                                     <i class="icon">&#xe801;</i>
                                 </span>
                             </div>
-                            <input id="password-confirm" type="password" class="form-control"
-                                name="password_confirmation" required autocomplete="new-password"
-                                placeholder="Again Password" aria-label="Recipient's password">
+                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Again Password" aria-label="Recipient's password">
                         </div>
                         <button class="btn btn-success btn-block button-curved-two" type="submit">
                             <i class="icon">&#xe804;</i>&nbsp;Register
@@ -336,8 +329,7 @@
                         <div class="talktext-me">
                             <p>Hey, Where is the plan of tomorrow?</p>
                         </div>
-                        <small class="chat-date"
-                            style="color: rgb(164, 164, 164); margin-left: 180px; font-size: 11px;">December 4th,
+                        <small class="chat-date" style="color: rgb(164, 164, 164); margin-left: 180px; font-size: 11px;">December 4th,
                             2019</small>
                     </div>
                     <div class="profile-container margin-left-profile">
@@ -353,8 +345,7 @@
                         <div class="talktext-you">
                             <p>Ohayougozaimasu! 明日の活動はどうですか？</p>
                         </div>
-                        <small class="chat-date"
-                            style="color: rgb(164, 164, 164); margin-left: 180px; font-size: 11px;">December 4th,
+                        <small class="chat-date" style="color: rgb(164, 164, 164); margin-left: 180px; font-size: 11px;">December 4th,
                             2019</small>
                     </div>
                     <div class="space-talk-bubble" style="width: 120px;"></div>
@@ -368,8 +359,7 @@
                         <div class="talktext-you">
                             <p>El proyecto de mañana estará listo, tenemos que hablar con las partes interesadas</p>
                         </div>
-                        <small class="chat-date"
-                            style="color: rgb(164, 164, 164); margin-left: 180px; font-size: 11px;">December 4th,
+                        <small class="chat-date" style="color: rgb(164, 164, 164); margin-left: 180px; font-size: 11px;">December 4th,
                             2019</small>
                     </div>
                     <div class="space-talk-bubble" style="width: 120px;"></div>
@@ -381,8 +371,7 @@
                         <div class="talktext-me">
                             <p>Wofür stehen wir heute an?</p>
                         </div>
-                        <small class="chat-date"
-                            style="color: rgb(164, 164, 164); margin-left: 180px; font-size: 11px;">December 4th,
+                        <small class="chat-date" style="color: rgb(164, 164, 164); margin-left: 180px; font-size: 11px;">December 4th,
                             2019</small>
                     </div>
                     <div class="profile-container margin-left-profile">
@@ -390,8 +379,7 @@
                     </div>
                 </div>
                 <form class="mt-2 form-width" style="display: flex; align-items: center; justify-content: center;">
-                    <input type="text" class="form-control mr-2" style="width: 75%; border-radius: 160px;"
-                        placeholder="Message..." disabled>
+                    <input type="text" class="form-control mr-2" style="width: 75%; border-radius: 160px;" placeholder="Message..." disabled>
 
                     <div class="button-send">
                         <img src="{{ asset('img/send-button.svg') }}" class="img-send" alt="">
@@ -402,7 +390,7 @@
         {{-- Seccion de otras caracteristicas. --}}
         <div class="col-md p-4 bg-light rounded" style="">
             <div class="container">
-                <div class="w-75" style="margin: auto;">
+                <div id="feature-one" class="w-75" style="margin: auto;">
                     <h1 class="text-center">Exchange messages related to your projects</h1>
                     <p class="paragraph">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -415,7 +403,8 @@
                     </p>
                     <a class="btn btn-info btn-sm" href="">Let's get started</a>
                 </div>
-                <div class="w-75 pt-5" style="margin: auto;">
+                <br>
+                <div id="feature-two" class="w-75" style="margin: auto;">
                     <h1 class="text-center">Share files</h1>
                     <p class="paragraph">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
