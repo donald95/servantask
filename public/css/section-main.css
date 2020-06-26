@@ -16,7 +16,7 @@
 }
 
 .section-wrap-shadow {
-    filter: drop-shadow(10px 10px 8px rgba(43, 43, 43, 0.8));
+    filter: drop-shadow(5px 5px 15px rgba(43, 43, 43, 0.8));
 }
 
 section div div {
@@ -51,39 +51,6 @@ section div div {
 
 .color-nav {
     background-color: rgba(243, 243, 243);
-}
-
-/* .paralelogram {
-    background-color: rgb(49, 143, 250);
-    width: 100%;
-    height: 4px;
-    transform: skew(45deg);
-    -webkit-transform: skew(45deg);
-    -moz-transform: skew(45deg);
-    -o-transform: skew(45deg);
-    margin-top: 10px;
-} */
-
-#round-footer-one {
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-}
-
-#round-footer-two {
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-}
-
-.box-shadow-section {
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-}
-
-#division {
-    text-align: center;
-    padding-top: 30px;
 }
 
 .talk-bubble {
@@ -222,7 +189,7 @@ section div div {
     display: flex;
 }
 
-.button-send {
+.button-send, .button-note {
     width: 35px;
     height: 35px;
     overflow: hidden;
@@ -236,7 +203,7 @@ section div div {
 
 .img-send {
     width: 20px;
-    margin-left: 10px;
+    margin-left: 9px;
     margin-top: 7px;
 }
 
@@ -245,12 +212,6 @@ section div div {
     background-color: rgb(216, 213, 213);
     padding: 10px;
     border-radius: 5px;
-}
-
-.img-voice-note {
-    width: 20px;
-    margin-left: 7px;
-    margin-top: 7px;
 }
 
 form div {
@@ -271,7 +232,6 @@ form div {
 
 #welcome-text {
     font-family: 'Open Sans', sans-serif;
-
 }
 
 #welcome {
@@ -279,9 +239,12 @@ form div {
     align-items: center;
     justify-content: center;
     border: 0.5px solid rgb(112, 112, 112);
-
 }
 
 #welcome, #register {
     margin: 30px;
+}
+
+.box-info {
+    border: 1px solid #dedede;
 }
